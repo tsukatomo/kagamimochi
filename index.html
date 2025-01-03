@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html>
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta property="og:site_name" content="かがみもち重ねゲーム">
+    <meta property="og:title" content="かがみもち重ねゲーム">
+    <meta property="og:description" content="かがみもちを作るゲームです。">
+    <meta property="og:url" content="https://tsukatomo.github.io/kagamimochi/">
+    <meta property="og:type" content="website">
+    <!--<meta property="og:image" content="https://github.com/tsukatomo/dungeon_battle/blob/main/docs/img/fighter1.png?raw=true">-->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@katsudontkd">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>かがみもち重ね</title>
+</head>
+<body>
+  <h1 style="text-align:center;font-family:'筑紫a丸ゴシック',system-ui">かがみもち重ね</h1>
+  <div id="canv">
+    <canvas id="backg_lay" width="640" height="480"></canvas>
+    <canvas id="chara_lay" width="640" height="480"></canvas>
+    <canvas id="useri_lay" width="640" height="480"></canvas>
+    <canvas id="trans_lay" width="640" height="480"></canvas>
+  </div>
+  <div id="button_canv">
+    <canvas id="btn" width="160" height="120"></canvas>
+  </div>
+  <p style="text-align:center;font-family:'筑紫a丸ゴシック',system-ui">
+    かがみもちを作るゲームです。
+    <br>
+    正確に積み上げて新年を祝いましょう。
+  </p>
+  <div id="howto">
+    <table style="font-family:'筑紫a丸ゴシック',system-ui">
+      <caption>● 操作方法 ●</caption>
+      <tr>
+        <td>矢印キー</td>
+        <td>移動</td>
+      </tr>
+    </table>
+  </div>
+  <br>
+  <footer>
+  </footer>
+  <style>
+    html {
+      touch-action: manipulation;
+    }
+    /* pc */
+    @media only screen and (min-width: 768px) {
+      #canv {
+        width: 640px;
+        height: 480px;
+        position: relative;
+        border: 2px solid black;
+        margin-left: auto;
+        margin-right: auto;
+        image-rendering: pixelated;
+      }
+      #canv canvas { position: absolute; }
+      #button_canv {
+        display: none !important;
+      }      
+    }
+    /* sp */
+    @media only screen and (max-width: 767px) {
+      #canv {
+        width: 320px;
+        height: 240px;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        image-rendering: pixelated;
+      }
+      #canv canvas {
+        width: 100%;
+        height: auto;
+        position: absolute;
+      }
+      #button_canv {
+        width: 90%;
+        height: auto;
+        position: relative;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        image-rendering: pixelated;
+      }
+      #button_canv canvas {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+    }
+    #backg_lay { z-index: 1; }
+    #chara_lay { z-index: 2; }
+    #useri_lay { z-index: 3; }
+    #trans_lay { z-index: 4; }
+    #howto {
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    table {
+      border-collapse: collapse;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    table, caption {
+      padding: 0.5em;
+    }
+    table, td {
+      padding: 0.5em;
+      border: 1px solid black;
+    }
+    footer {
+      font-family: '筑紫a丸ゴシック', "system-ui";
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 4.0em;
+    }
+    
+  </style>
+  <script type="text/javascript" src="js/main.js"> </script>
+</body>
+
+</html>
