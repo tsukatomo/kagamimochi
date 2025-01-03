@@ -425,7 +425,7 @@ let gameScene = "countdown";
 let score = 0;
 let scoreDisplayX = 0;
 let scoreDisplayY = 0;
-let scoreDisplayAlpha = 1.0;
+let scoreDisplayAlpha = 0.0;
 let accuracy = 0;
 let accuracyDisplay = 0;
 let accuracyDisplayY = 64;
@@ -526,6 +526,9 @@ let sceneList = {
       }
       else if (gameScene === "menu"){
         drawTextCenter("HAPPY NEW YEAR!!", 60, "#ffffcc", "#333333", 96, useriLay, useriCtx);
+        if (accuracy >= 11100) {
+          drawTextCenter("PERFECT MOCHI!", 24, "#99ffcc", "#333333", 280, useriLay, useriCtx);
+        }
         drawTextCenter("[z] リトライ    [x] Xにポスト", 32, "#ffffcc", "#333333", 360, useriLay, useriCtx);
         if (isKeyPressedNow("z")) {
           setTransition("game");
